@@ -1,6 +1,19 @@
-#plural sight python from 4th april
-c= 5
-while c:
-  print(c)
-  c-=1
-  
+#fibbonaci
+
+def fib(num):
+  f = 0
+  s = 1
+  res =[]
+  for i in range(num):
+    res.append(f)
+    temp=f
+    f =s
+    s = temp+s
+  return res
+
+
+
+
+
+
+print(fib(21))
