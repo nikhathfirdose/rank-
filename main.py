@@ -1,39 +1,44 @@
-#7 Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional array. The element value in the i-th row and j-th column of the array should be i * j.
+# 8 Write a program that accepts a comma separated sequence of words as input and prints the words in a comma-separated sequence after sorting them alphabetically.
+# Suppose the following input is supplied to the program:
+# without,hello,bag,world
+# Then, the output should be:
+# bag,hello,without,world
+def sortwords():
+  # strg = map(str,input().split(",") ) #itll map but to 1 value so returns an object
+  items = [x for x in (input().split(","))]
+  items.sort()
+  print(",".join(items))
 
-# Note: i=0,1.., X-1; j=0,1,¡­Y-1. Suppose the following inputs are given to the program: 3,5
+# sortwords()
 
-# Then, the output of the program should be:
+# 9 Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized.
+# Suppose the following input is supplied to the program:
+# Hello world
+# Practice makes perfect
+# Then, the output should be:
+# HELLO WORLD
+# PRACTICE MAKES PERFECT
+def cap():
+  lst = []
+  while True:
+    x = input()
+    if len(x)==0:
+        break;
+    lst.append(x.upper())
+  for line in lst:
+    print(line)
+# cap()
 
-# [[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]]
-  
-def matri():
-  ival =[]
-  jval=[]
-  final =[]
-  X = int(input("X="))
-  Y = int(input("Y="))
-  for i in range(X):
-    ival.append(i)
-  for j in range(Y):
-    jval.append(j)
-  for n in ival:
-    for m in jval:
-      res = m*n
-      final.append(res)
-  return final
-print(matri())
+# 10 Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and sorting them alphanumerically.
+# Suppose the following input is supplied to the program:
+# hello world and practice makes perfect and hello world again
+# Then, the output should be:
+# again and hello makes perfect practice world
 
+def dupl():
+  items = {x for x in input().split(" ")}
+  j = sorted(items)
+  print(" ". join(j))
 
-x,y = map(int,input().split(','))
-lst = []
-
-for i in range(x):
-    tmp = []
-    for j in range(y):     
-        tmp.append(i*j)
-        
-    lst.append(tmp)
-    
-print(lst)
-  
+# dupl()
 
