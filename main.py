@@ -1,27 +1,20 @@
- #13Write a program that accepts a sentence and calculate the number of letters and digits.
+#14 Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters.
 
 #Suppose the following input is supplied to the program:
 
-def numCal():
-  countD = 0
-  countL = 0 
+def calcCases():
+  upper,lower =0,0
   sentence = input("Enter your sentence: ")
   for letter in sentence:
-    if letter.isdigit():
-      countD+=1
-    elif letter.isalpha():
-      countL+=1
-  result =  f"Letters: {countL} \nDigits: {countD}"
-  return result 
-     
+      upper+=letter.isupper()
+      lower+=letter.islower()
+  result = f"Upper: {upper} \nLower: {lower}"
+  return result
 
-print(numCal()) 
+print(calcCases())
+
 #author
-word = input()
-letter,digit = 0,0
 
-for i in word:
-    letter+=i.isalpha()         # returns True if alphabet
-    digit+=i.isnumeric()        # returns True if numeric
-
-print("LETTERS %d\nDIGITS %d"%(letter,digit))
+# for i in word:
+#         lower+=i.islower()
+#         upper+=i.isupper()
