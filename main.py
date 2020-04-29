@@ -1,16 +1,16 @@
-#11 Write a program which accepts a sequence of comma separated 4 digit binary numbers as its input and then check whether they are divisible by 5 or not. The numbers that are divisible by 5 are to be printed in a comma separated sequence.
-# Example:
-# 0100,0011,1010,1001
-# Then the output should be:
-# 1010
-def check():
-  b =[]
-  items = [x for x in input().split(",")]
-  for i in items:
-    binar = bin(int(i))
-    b.append(binar)
-  print(b)
+#12Write a program, which will find all such numbers between 1000 and 3000 (both included) such that each digit of the number is an even number.The numbers obtained should be printed in a comma-separated sequence on a single line.
 
-check()
+def evenNum():
+  for i in range(1000,3001):
+    if i%2==0:
+      if (int(i/10))%2==0:
+        if (int(i/100))%2 ==0:
+          if (int(i/1000))%2==0:
+            print(i, end=",")
+def check(element):
+    return all(ord(i)%2 == 0 for i in element)  # all returns True if all digits i is even in element
 
-#git push
+lst = [str(i) for i in range(1000,3001)]        # creates list of all given numbers with string data type
+lst = list(filter(check,lst))                   # filter removes element from list if check condition fails
+print(lst)
+print(",".join(lst))
