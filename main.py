@@ -1,16 +1,27 @@
-#12Write a program, which will find all such numbers between 1000 and 3000 (both included) such that each digit of the number is an even number.The numbers obtained should be printed in a comma-separated sequence on a single line.
+ #13Write a program that accepts a sentence and calculate the number of letters and digits.
 
-def evenNum():
-  for i in range(1000,3001):
-    if i%2==0:
-      if (int(i/10))%2==0:
-        if (int(i/100))%2 ==0:
-          if (int(i/1000))%2==0:
-            print(i, end=",")
-def check(element):
-    return all(ord(i)%2 == 0 for i in element)  # all returns True if all digits i is even in element
+#Suppose the following input is supplied to the program:
 
-lst = [str(i) for i in range(1000,3001)]        # creates list of all given numbers with string data type
-lst = list(filter(check,lst))                   # filter removes element from list if check condition fails
-print(lst)
-print(",".join(lst))
+def numCal():
+  countD = 0
+  countL = 0 
+  sentence = input("Enter your sentence: ")
+  for letter in sentence:
+    if letter.isdigit():
+      countD+=1
+    elif letter.isalpha():
+      countL+=1
+  result =  f"Letters: {countL} \nDigits: {countD}"
+  return result 
+     
+
+print(numCal()) 
+#author
+word = input()
+letter,digit = 0,0
+
+for i in word:
+    letter+=i.isalpha()         # returns True if alphabet
+    digit+=i.isnumeric()        # returns True if numeric
+
+print("LETTERS %d\nDIGITS %d"%(letter,digit))
