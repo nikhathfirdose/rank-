@@ -1,46 +1,32 @@
-#18 A website requires the users to input username and password to register. Write a program to check the validity of password input by users.
+#20 Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n.
 
-# Following are the criteria for checking the password:
+# class Divisible:
+#     def by_seven(self, n):
+#         for number in range(0,n + 1):
+#             if number % 7 == 0: yield number
 
-# At least 1 letter between [a-z]
-# At least 1 number between [0-9]
-# At least 1 letter between [A-Z]
-# At least 1 character from [$#@]
-# Minimum length of transaction password: 6
-# Maximum length of transaction password: 12
-# Your program should accept a sequence of comma separated passwords and will check them according to the above criteria. Passwords that match the criteria are to be printed, each separated by a comma.ABd1234@1,a F1#,2w3E*,2We3345
-import re
-def passCheck():
-  matched =[]
-  passwords = input("Enter comma separated passwords:\n").split(",")
-  for pw in passwords:
-    if re.match("^[\w@#$]{6,12}$", pw):
-      matched.append(pw)
-      print("s")
-    else:
-      print("o")
-  return (",".join(matched))
 
-# print(passCheck())
+# divisible = Divisible()
+# generar = divisible.by_seven(49)
+# for number in generar:
+    # print(number)
 
-#19 You are required to write a program to sort the (name, age, score) tuples by ascending order where name is string, age and score are numbers. The tuples are input by console. The sort criteria is:
+#21A robot moves in a plane starting from the original point (0,0). The robot can move toward UP, DOWN, LEFT and RIGHT with a given steps. The trace of robot movement is shown as the following:
+import  math
 
-# 1: Sort based on name
-# 2: Then sort based on age
-# 3: Then sort by score
-
-lst = []
+x,y = 0,0
 while True:
-    print("Do you want to enter data? type Yes/no")
-    user = input()
-    try:
-      if user =="Yes":
-        s = input("Enter Name,Age,Score: ").split(',')
-      else:                         
+    s = input("enter ").split()
+    if not s:
         break
-    except IndexError:
-      print("Enter 3 values, Please do not skip any parameter!")
-    lst.append(tuple(s))  
-
-lst.sort(key= lambda x:(x[0],x[1],x[2]))  # here key is defined by lambda and the data is sorted by element priority 0>1>2 in accending order
-print(lst)
+    if s[0]=='UP':                  # s[0] indicates command
+        y+=int(s[1])                # s[1] indicates unit of move
+    if s[0]=='DOWN':
+        y-=int(s[1])
+    if s[0]=='LEFT':
+        x-=int(s[1])
+    if s[0]=='RIGHT':
+        x+=int(s[1])
+                                    # N**P means N^P
+dist = round(math.sqrt(x**2 + y**2))  # euclidean distance = square root of (x^2+y^2) and rounding it to nearest integer
+print(dist)
