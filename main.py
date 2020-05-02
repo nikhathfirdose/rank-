@@ -1,15 +1,15 @@
 #20 Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n.
 
-# class Divisible:
-#     def by_seven(self, n):
-#         for number in range(0,n + 1):
-#             if number % 7 == 0: yield number
+class Divisible:
+    def by_seven(self, n):
+        for number in range(0,n + 1):
+            if number % 7 == 0: yield number
 
 
-# divisible = Divisible()
-# generar = divisible.by_seven(49)
-# for number in generar:
-    # print(number)
+divisible = Divisible()
+generar = divisible.by_seven(49)
+for number in generar:
+    print(number)
 
 #21A robot moves in a plane starting from the original point (0,0). The robot can move toward UP, DOWN, LEFT and RIGHT with a given steps. The trace of robot movement is shown as the following:
 import  math
