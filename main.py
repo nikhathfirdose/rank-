@@ -1,32 +1,73 @@
-#20 Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n.
+# jacker rank solve 
+sets = set()
+noOfInputs = int(input())
+for i in range(noOfInputs):
+    value = input()
+    sets.add(value)
+    count = len(sets)
+print(count)
+#22 Write a program to compute the frequency of the words from the input. The output should output after sorting the key alphanumerically.
 
-class Divisible:
-    def by_seven(self, n):
-        for number in range(0,n + 1):
-            if number % 7 == 0: yield number
+# Suppose the following input is supplied to the program:
+
+def countSort():
+  sentence = input("Enter your sentence: ")
+  words = sentence.split()
+  sortList={}
+  for word in words:
+    if word in sortList:
+      sortList[word]+=1
+    else:
+      sortList[word] =1
+  for key in sortList:
+    result = key+ ":"  +str(sortList[key])
+    print(result)
+
+(countSort()) 
+#23 Write a method which can calculate square value of number
 
 
-divisible = Divisible()
-generar = divisible.by_seven(49)
-for number in generar:
-    print(number)
+def sqrVal():
+  number = int(input("Enter number: "))
+  return "sqr is "+ str(number**2)
 
-#21A robot moves in a plane starting from the original point (0,0). The robot can move toward UP, DOWN, LEFT and RIGHT with a given steps. The trace of robot movement is shown as the following:
-import  math
+print(sqrVal())
 
-x,y = 0,0
-while True:
-    s = input("enter ").split()
-    if not s:
-        break
-    if s[0]=='UP':                  # s[0] indicates command
-        y+=int(s[1])                # s[1] indicates unit of move
-    if s[0]=='DOWN':
-        y-=int(s[1])
-    if s[0]=='LEFT':
-        x-=int(s[1])
-    if s[0]=='RIGHT':
-        x+=int(s[1])
-                                    # N**P means N^P
-dist = round(math.sqrt(x**2 + y**2))  # euclidean distance = square root of (x^2+y^2) and rounding it to nearest integer
-print(dist)
+#24 python built in functions
+print(str.__doc__)
+print(sorted.__doc__)
+
+def pow(n,p):
+    '''
+    param n: This is any integer number
+    param p: This is power over n
+    return:  n to the power p = n^p
+    '''
+
+    return n**p
+
+print(pow(3,2))
+print(pow.__doc__) 
+
+#25 Define a class, which have a class parameter and have a same instance parameter.
+
+class Person:
+  def __init__(self,f,l):
+    self.f = f
+    self.l =l
+  def intro(self):
+    print("hello " + self.f + self.l)
+
+p1 = Person("john", "stamos")
+p1.intro()
+class Car:
+    def __init__(self,name = None):
+        self.name = name
+
+honda=Car("Honda")
+print("name is {0}".format(honda.name))
+
+toyota=Car()
+toyota.name="Toyota"
+print("name is %s"%(toyota.name))
+
