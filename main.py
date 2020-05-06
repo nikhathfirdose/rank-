@@ -1,29 +1,62 @@
-#26 Define a function which can compute the sum of two numbers.
+#31Define a function which can print a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys.
 
-def sums(a,b):
-  return a+b
-#27 Define a function that can convert a integer into a string and print it in console.
+def sqrdict():
+  d = dict()
+  for num in range(1,21):
+    d[num]= num**2
+  return d
 
-def converter(a):
-  return str(a)+9
-conv = lambda x: str(x)
+print(sqrdict())
 
-#28 Define a function that can receive two integer numbers in string form and compute their sum and then print it in console.
+#32 Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys. The function should just print the keys only.
 
-sums = lambda x,y: int(x)+int(y)
+def keyOnly():
+  m = dict()
+  j = list()
+  for num in range(1,21):
+    m[num] = num**2
+  for k in m.keys():
+    j.append(k)
 
-#29 Define a function that can accept two strings as input and concatenate them and then print it in console.
+  return j
 
-conc = lambda x,y : str(x)+str(y)
+print(keyOnly())
 
-#30 Define a function that can accept two strings as input and print the string with maximum length in console. If two strings have the same length, then the function should print all strings line by line.
+#33 Define a function which can generate and print a list where the values are square of numbers between 1 and 20 (both included).
 
-def maxlen(a,b):
-  al,bl = len(a),len(b)
-  if al>bl:
-    return "a is haing max lemgth"
-  elif bl>al:
-    return "b is having max length"
-  return "same"
+def sqrlist():
+  l = [x**2 for x in range(1,21)]
+  return l
+print(sqrlist())
 
-print(maxlen("aaa","lol"))
+#34 Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print the first 5 elements in the list.
+
+def sqrlist2():
+  l = [x**2 for x in range(1,21)]
+  return l[:5]
+
+print(sqrlist2())
+
+#35 Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print the last 5 elements in the list.
+
+def sqrlist3():
+  l = [x**2 for x in range(1,21)]
+  return l[-5:]
+
+print(sqrlist3())
+
+#36 Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print all values except the first 5 elements in the list.
+
+def sqrlist4():
+  l = [x**2 for x in range(1,21)]
+  return l[5:]
+print(sqrlist4())
+
+#37 Define a function which can generate and print a tuple where the value are square of numbers between 1 and 20 (both included).
+
+def sqrTup():
+   l = [x**2 for x in range(1,21)]
+   return tuple(l)
+    
+print(sqrTup())
+
