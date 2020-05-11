@@ -60,3 +60,4 @@ def sqrTup():
     
 print(sqrTup())
 
+####commit exercism day 3
